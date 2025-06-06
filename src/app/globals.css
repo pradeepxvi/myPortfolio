@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    /* Pure Black */
+    --foreground: 0 0% 100%;
+    /* Pure White */
+
+    --card: 0 0% 8%;
+    /* Very Dark Gray */
+    --card-foreground: 0 0% 95%;
+    /* Off-White */
+
+    --popover: 0 0% 5%;
+    /* Even Darker Gray */
+    --popover-foreground: 0 0% 95%;
+    /* Off-White */
+
+    --primary: 120 60% 50%;
+    /* Hacker Green */
+    --primary-foreground: 0 0% 10%;
+    /* Dark Gray for text on green */
+
+    --secondary: 0 0% 15%;
+    /* Dark Gray */
+    --secondary-foreground: 120 60% 50%;
+    /* Hacker Green for text on secondary */
+
+    --muted: 0 0% 20%;
+    /* Medium Dark Gray */
+    --muted-foreground: 0 0% 60%;
+    /* Lighter Gray for muted text */
+
+    --accent: 30 100% 50%;
+    /* Vibrant Orange */
+    --accent-foreground: 0 0% 10%;
+    /* Dark Gray for text on orange */
+
+    --destructive: 0 80% 55%;
+    /* Bright Red */
+    --destructive-foreground: 0 0% 95%;
+    /* Off-White for text on red */
+
+    --border: 0 0% 20%;
+    /* Medium Dark Gray to be visible on dark backgrounds */
+    --input: 0 0% 20%;
+    /* Same as border */
+    --ring: 120 60% 50%;
+    /* Hacker Green for focus rings */
+
+    --radius: 0.5rem;
+
+    /* Chart colors adjusted for hacker theme */
+    --chart-1: 120 60% 50%;
+    /* green */
+    --chart-2: 30 100% 50%;
+    /* orange */
+    --chart-3: 0 80% 55%;
+    /* red */
+    --chart-4: 180 60% 50%;
+    /* cyan/blue */
+    --chart-5: 60 100% 45%;
+    /* yellow, slightly desaturated */
+
+    /* Sidebar specific colors */
+    --sidebar-background: 0 0% 4%;
+    /* Slightly off-black, darker than card */
+    --sidebar-foreground: 0 0% 85%;
+    /* Lighter gray for sidebar text */
+    --sidebar-primary: 120 60% 50%;
+    /* Hacker Green */
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 0 0% 15%;
+    /* Dark Gray for sidebar accents */
+    --sidebar-accent-foreground: 120 60% 50%;
+    /* Hacker Green */
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 120 60% 50%;
+  }
+
+  .dark {
+    /* Ensure dark theme variables are identical to root for consistency */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 120 60% 50%;
+    --primary-foreground: 0 0% 10%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 120 60% 50%;
+
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 30 100% 50%;
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 80% 55%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 120 60% 50%;
+
+    --chart-1: 120 60% 50%;
+    --chart-2: 30 100% 50%;
+    --chart-3: 0 80% 55%;
+    --chart-4: 180 60% 50%;
+    --chart-5: 60 100% 45%;
+
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 0 0% 85%;
+    --sidebar-primary: 120 60% 50%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 120 60% 50%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 120 60% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    /* Ensure smooth scrolling for anchor links */
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+}
+
+/* Custom scrollbar for a more modern feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background) / 0.5);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--accent) / 0.7);
+  /* Orange scrollbar thumb */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent));
+  /* Brighter orange on hover */
+}
