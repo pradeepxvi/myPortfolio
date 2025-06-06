@@ -74,9 +74,9 @@ export default function TerminalIntro() {
           </div>
           <div
             ref={terminalBodyRef}
-            className="p-6 font-mono text-[10px] sm:text-xs leading-relaxed h-60 sm:h-72 overflow-y-auto font-bold"
+            className="p-6 font-mono text-[10px] md:text-xl  leading-relaxed h-60 sm:h-72 overflow-y-auto font-bold"
           >
-            <pre className="whitespace-pre-wrap text-[10px] sm:text-xs">
+            <pre className="whitespace-pre-wrap ">
               <span className="text-primary">{L1_KW}</span>
               <span className="text-accent">{L1_CN}</span>
               <span className="text-foreground">{L1_BR_O}</span>
