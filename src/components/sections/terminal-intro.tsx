@@ -1,11 +1,10 @@
-
 "use client";
 
-import { useState, useEffect, useRef } from 'react';
-import { Terminal as TerminalIcon, ArrowRight, Briefcase } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
-import HireMePopup from '@/components/popups/hire-me-popup';
+import { useState, useEffect, useRef } from "react";
+import { Terminal as TerminalIcon, ArrowRight, Briefcase } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import HireMePopup from "@/components/popups/hire-me-popup";
 
 const NAME_TO_ANIMATE = "PRADEEP";
 
@@ -24,14 +23,13 @@ const L2_BR_O_PARAMS = " {"; // Renamed to avoid conflict
 
 const L3_IND = "        ";
 const L3_METHOD = "System.out.println";
-const L3_STR_O = "(\"";
-const L3_STR_C = "\");";
+const L3_STR_O = '("';
+const L3_STR_C = '");';
 
 const L4_IND = "    ";
 const L4_BR_C = "}";
 
 const L5_BR_C = "}";
-
 
 export default function TerminalIntro() {
   const [visibleCharsInName, setVisibleCharsInName] = useState(0);
@@ -60,10 +58,12 @@ export default function TerminalIntro() {
     }
   }, [visibleCharsInName]);
 
-
   return (
     <>
-      <section id="hero" className="min-h-screen flex flex-col items-center justify-center px-4 pb-4 pt-20 sm:px-8 sm:pb-8 sm:pt-8 bg-background text-foreground">
+      <section
+        id="hero"
+        className="min-h-screen flex flex-col items-center justify-center px-4 pb-4 pt-4 sm:px-8 sm:pb-8 sm:pt-8 bg-background text-foreground"
+      >
         <div className="w-full max-w-3xl bg-card shadow-2xl rounded-lg overflow-hidden border border-primary/30">
           <div className="bg-muted p-3 flex items-center gap-2 border-b border-border">
             <span className="h-3 w-3 bg-destructive rounded-full"></span>
@@ -72,8 +72,11 @@ export default function TerminalIntro() {
             <TerminalIcon className="h-5 w-5 ml-auto text-primary" />
             <span className="font-mono text-sm text-primary">DevConsole</span>
           </div>
-          <div ref={terminalBodyRef} className="p-6 font-mono text-sm sm:text-base leading-relaxed h-60 sm:h-72 overflow-y-auto font-bold">
-            <pre className="whitespace-pre-wrap">
+          <div
+            ref={terminalBodyRef}
+            className="p-6 font-mono text-[10px] sm:text-xs leading-relaxed h-60 sm:h-72 overflow-y-auto font-bold"
+          >
+            <pre className="whitespace-pre-wrap text-[10px] sm:text-xs">
               <span className="text-primary">{L1_KW}</span>
               <span className="text-accent">{L1_CN}</span>
               <span className="text-foreground">{L1_BR_O}</span>
@@ -96,9 +99,9 @@ export default function TerminalIntro() {
               {visibleCharsInName === NAME_TO_ANIMATE.length && (
                 <span
                   className={cn(
-                    'inline-block text-accent', // Cursor color matches string
-                    showCursor ? 'opacity-100' : 'opacity-0',
-                    'animate-pulse duration-700'
+                    "inline-block text-accent", // Cursor color matches string
+                    showCursor ? "opacity-100" : "opacity-0",
+                    "animate-pulse duration-700"
                   )}
                 >
                   _
@@ -107,8 +110,8 @@ export default function TerminalIntro() {
               {visibleCharsInName < NAME_TO_ANIMATE.length && (
                 <span
                   className={cn(
-                    'inline-block text-accent', // Cursor color matches string
-                    'animate-pulse'
+                    "inline-block text-accent", // Cursor color matches string
+                    "animate-pulse"
                   )}
                 >
                   _
@@ -125,16 +128,21 @@ export default function TerminalIntro() {
         </div>
         <div className="mt-10 text-center">
           {/* Removed h1 and p elements here */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8"> {/* Added mt-8 for spacing */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+            {" "}
+            {/* Added mt-8 for spacing */}
             <Button
               variant="outline"
               size="lg"
               className="bg-transparent border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 ease-in-out group text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
               onClick={() => {
-                document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+                document
+                  .getElementById("projects")
+                  ?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              Explore My Work <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              Explore My Work{" "}
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button
               variant="default"
@@ -142,7 +150,8 @@ export default function TerminalIntro() {
               className="bg-accent text-accent-foreground hover:bg-accent/80 transition-all duration-300 ease-in-out group text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
               onClick={() => setIsHireMePopupOpen(true)}
             >
-              <Briefcase className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" /> Hire Me
+              <Briefcase className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />{" "}
+              Hire Me
             </Button>
           </div>
           <p className="text-sm text-muted-foreground/70 mt-12">
@@ -150,7 +159,10 @@ export default function TerminalIntro() {
           </p>
         </div>
       </section>
-      <HireMePopup isOpen={isHireMePopupOpen} onOpenChange={setIsHireMePopupOpen} />
+      <HireMePopup
+        isOpen={isHireMePopupOpen}
+        onOpenChange={setIsHireMePopupOpen}
+      />
     </>
   );
 }
