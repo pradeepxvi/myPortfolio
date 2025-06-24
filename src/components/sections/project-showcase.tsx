@@ -11,6 +11,11 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Github, ExternalLink } from "lucide-react";
 
+import Portfolio from "../../assets/portfolio.png";
+import Bookverse from "../../assets/bokverse.png";
+import DjagoAuth from "../../assets/djangoauth.png";
+import ChatApp from "../../assets/chatapp.png";
+
 interface Project {
   id: string;
   title: string;
@@ -23,17 +28,51 @@ interface Project {
 }
 
 const projectsData: Project[] = [
-  // {
-  //   id: "1",
-  //   title: "E-commerce Platform API",
-  //   description:
-  //     "A robust backend for an e-commerce website, featuring product management, user authentication, and order processing. Built with Django and DRF.",
-  //   imageUrl: "https://placehold.co/600x400.png",
-  //   imageHint: "code backend",
-  //   techStack: ["Python", "Django", "DRF", "PostgreSQL", "REST API"],
-  //   githubUrl: "https://github.com/yourusername/project1",
-  //   liveDemoUrl: "#",
-  // },
+  {
+    id: "1",
+    title: "Real-Time Chat Application",
+    description:
+      "A dynamic messaging platform developed using Django, WebSockets, and Django Channels to enable real-time communication between users. It features secure user authentication, including registration, login, password reset, and email verification functionalities.",
+    imageUrl: ChatApp || "https://placehold.co/600x400.png",
+    imageHint: "code backend",
+    techStack: ["Python", "Django", "DRF", "Django Channels"],
+    githubUrl: "https://github.com/pradeepxvi/Real-Time-Chat-Application",
+    liveDemoUrl: "#",
+  },
+  {
+    id: "2",
+    title: "Full Authentication Django App",
+    description:
+      "A robust Django-based authentication system supporting email verification, login, logout, password reset, and password change. Designed with security and usability in mind, suitable for integrating into larger Django projects.",
+    imageUrl: DjagoAuth || "https://placehold.co/600x400.png",
+    imageHint: "auth system",
+    techStack: ["Python", "Django", "SMTP", "HTML", "Bootstrap"],
+    githubUrl: "https://github.com/pradeepxvi/Django-Full-Authentication",
+    liveDemoUrl: "https://wizzzeee.onrender.com/",
+  },
+  {
+    id: "3",
+    title: "BookVerse",
+    description:
+      "A social book review and reading list platform where users can track books, write reviews, and interact with the community. Features include personalized reading shelves, user profiles, and real-time notifications.",
+    imageUrl: Bookverse || "https://placehold.co/600x400.png",
+    imageHint: "book community",
+    techStack: ["Python", "Django", "SQLite", "HTML", "CSS", "JavaScript"],
+    githubUrl: "https://github.com/pradeepxvi/bookverse",
+    liveDemoUrl: "https://bookverse-lbz7.onrender.com/#/home",
+  },
+
+  {
+    id: "4",
+    title: "Personal Portfolio Website",
+    description:
+      "A modern, responsive portfolio website showcasing my projects, skills, and contact information. Built to reflect my personal brand with a clean UI, animations, and GitHub integration.",
+    imageUrl: Portfolio || "https://placehold.co/600x400.png",
+    imageHint: "personal portfolio",
+    techStack: ["TypeScript", "React", "Tailwind CSS", "Next"],
+    githubUrl: "https://github.com/pradeepxvi/myPortfolio",
+    liveDemoUrl: "https://pradipkunwar.name.np/",
+  },
 ];
 
 export default function ProjectShowcase() {
