@@ -191,7 +191,7 @@ export default function SocialsSection() {
             className="text-primary text-lg hover:text-accent"
           >
             <a href="mailto:pradeepxvi@example.com">
-              <Mail className="mr-2 h-5 w-5" /> pradeepxvi@example.com
+              <Mail className="mr-2 h-5 w-5" /> pradeepxvi@gmail.com
             </a>
           </Button>
         </div>
