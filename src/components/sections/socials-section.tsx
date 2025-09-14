@@ -169,12 +169,11 @@ export default function SocialsSection() {
                 className="w-full bg-accent text-accent-foreground hover:bg-accent/80"
               >
                 <a
-                  href="https://discord.com/users/pradeepxvi"
+                  href="https://discord.gg/rSFMkzkW"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   {" "}
-                  {/* Replace with your actual Discord server/profile link if different */}
                   Connect on Discord <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>
